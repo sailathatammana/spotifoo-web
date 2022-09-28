@@ -16,7 +16,7 @@
   background: var(--color-white);
 }
 .navbar {
-  position: absolute;
+  position: fixed;
   left: 0%;
   right: 0%;
   top: 0%;
@@ -27,6 +27,7 @@
 }
 
 .navbar-nav {
+  margin-right: 25.33%;
   display: flex;
   flex-direction: column;
   align-items: center;
