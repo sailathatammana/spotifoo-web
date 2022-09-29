@@ -8,18 +8,16 @@ interface iProps {
 
 const GenreCard: FC<iProps> = ({ item }) => {
   return (
-    <>
-      <article className="thumbs">
-        <img
-          src={noAlbum}
-          alt=""
-          className="thumbnail"
-          height={200}
-          width={200}
-        />
-        <h3>{item.genre}</h3>
-      </article>
-    </>
+    <article className="thumbs">
+      <img
+        src={noAlbum}
+        alt=""
+        className="thumbnail"
+        height={200}
+        width={200}
+      />
+      <h3>{item.genre}</h3>
+    </article>
   );
 };
 export default GenreCard;
