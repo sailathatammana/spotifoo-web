@@ -20,9 +20,6 @@ const ArtistCard: FC<iProps> = ({ item }) => {
         src={"http://localhost:8080/" + item.pathToAlbum}
         onError={imageOnErrorHandler}
         alt=""
-        className="thumbnail"
-        height={200}
-        width={200}
       />
 
       <h3>{item.artist}</h3>

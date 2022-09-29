@@ -1,0 +1,37 @@
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-medium);
+  gap: var(--space-medium);
+  position: relative;
+  width: 224px;
+  height: 259px;
+  background: var(--color-gray-dark);
+  border-radius: var(--space-small);
+}
+
+.thumbs img {
+  width: 192px;
+  height: 192px;
+  border-radius: var(--space-small);
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.thumbs h3 {
+  width: 192px;
+  height: 19px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--space-medium);
+  line-height: 19px;
+  color: var(--color-white);
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}

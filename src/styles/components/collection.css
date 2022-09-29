@@ -3,14 +3,18 @@
 }
 
 .home-thumbs {
+  margin-top: var(--space-bigger);
   padding-left: 232px;
 }
 .home-thumbs h2 {
-  margin-top: var(--space-big);
-  font-weight: 300;
-  color: white;
+  width: 61px;
+  height: 29px;
+  font-size: var(--space-big);
+  line-height: 29px;
+  font-weight: 700;
+  color: var(--color-white);
   padding-right: 920px;
-  margin-bottom: var(--space-big);
+  margin-bottom: var(--space-bigger);
 }
 .home-thumbs ul {
   display: grid;
@@ -18,6 +22,6 @@
   justify-items: center;
   width: 95%;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 32px;
-  row-gap: 16px;
+  column-gap: var(--space-medium);
+  row-gap: var(--space-medium);
 }

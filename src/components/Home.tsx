@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <SideBar />
       <div className="collections">
-        <ArtistCollection data={artists}>Artits</ArtistCollection>
+        <ArtistCollection data={artists}>Artists</ArtistCollection>
         <AlbumCollection data={albums}>Albums</AlbumCollection>
         <GenreCollection data={genres}>Genres</GenreCollection>
       </div>

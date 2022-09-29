@@ -9,13 +9,7 @@ interface iProps {
 const GenreCard: FC<iProps> = ({ item }) => {
   return (
     <article className="thumbs">
-      <img
-        src={noAlbum}
-        alt=""
-        className="thumbnail"
-        height={200}
-        width={200}
-      />
+      <img src={noAlbum} alt="" />
       <h3>{item.genre}</h3>
     </article>
   );
