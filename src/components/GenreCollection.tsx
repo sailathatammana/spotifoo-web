@@ -1,17 +1,14 @@
 import { FC } from "react";
 
-import { IMusic } from "../types/iMusic";
 import GenreCard from "./GenreCard";
 
 interface IProps {
-  data: IMusic[];
+  data: [];
   children: string;
 }
 
 const GenreCollection: FC<IProps> = ({ data, children }) => {
-  const Thumbnails = data.map((item) => (
-    <GenreCard key={item.id} item={item} />
-  ));
+  const Thumbnails = data.map((item) => <GenreCard item={item} />);
   return (
     <>
       <section className="home-thumbs">
