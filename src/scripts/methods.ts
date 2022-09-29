@@ -11,7 +11,7 @@ export function getArtist(data: IMusic[]) {
   unique.sort((a, b) => {
     return a.artist.localeCompare(b.artist);
   });
-  console.log(unique);
+  return unique;
 }
 
 export function getAlbums(data: IMusic[]) {
@@ -25,7 +25,7 @@ export function getAlbums(data: IMusic[]) {
   unique.sort((a, b) => {
     return a.album.localeCompare(b.album);
   });
-  console.log(unique);
+  return unique;
 }
 
 export function getGenre(data: IMusic[]) {
@@ -39,5 +39,5 @@ export function getGenre(data: IMusic[]) {
   unique.sort((a, b) => {
     return a.artist.localeCompare(b.genre);
   });
-  console.log(unique);
+  return unique;
 }

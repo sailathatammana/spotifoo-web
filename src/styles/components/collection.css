@@ -1,0 +1,23 @@
+.collections {
+  margin-bottom: 100px;
+}
+
+.home-thumbs {
+  padding-left: 232px;
+}
+.home-thumbs h2 {
+  margin-top: var(--space-big);
+  font-weight: 300;
+  color: white;
+  padding-right: 920px;
+  margin-bottom: var(--space-big);
+}
+.home-thumbs ul {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 95%;
+  grid-template-columns: repeat(4, 2fr);
+  column-gap: 32px;
+  row-gap: 16px;
+}
