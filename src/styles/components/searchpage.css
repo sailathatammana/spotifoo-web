@@ -1,0 +1,42 @@
+form {
+  background-color: white;
+  margin-bottom: 32px;
+  border-style: none;
+  margin-top: var(--space-bigger);
+  margin-left: 232px;
+  width: 360px;
+  height: 40px;
+  border-radius: 100px;
+}
+
+form .search {
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  column-gap: 2px;
+  background: #ffffff;
+  border-radius: 100px;
+}
+.search img {
+  margin-top: 8px;
+  height: 24px;
+  width: 24px;
+}
+.search button {
+  width: 50px;
+  border: none;
+  background-color: white;
+  border-color: white;
+  padding: 0px;
+  border-radius: 16px;
+  background-image: none;
+}
+
+.search input {
+  margin-top: 8px;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  left: 56px;
+}

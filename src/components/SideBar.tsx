@@ -10,21 +10,21 @@ export default function SideBar() {
     <nav className="navbar">
       <ul className="navbar-nav">
         <li className="logo">
-          <a href="/" className="nav-link">
+          <Link to="/" className="nav-link">
             <img src={logo} alt="." />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/" className="nav-link">
+          <Link to="/" className="nav-link">
             <img src={home} alt="." className="image" />
             <span className="link-text">Home</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/" className="nav-link">
+          <Link to="/search" className="nav-link">
             <img src={search} alt="." className="image" />
             <span className="link-text">Search</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
