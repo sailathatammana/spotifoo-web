@@ -12,18 +12,21 @@ export default function Searchpage() {
   }
 
   return (
-    <form onSubmit={(event) => onSearch(event)}>
-      <div className="search">
-        <button>
-          <img src={search} alt="search" />
-        </button>
-        <input
-          type="text"
-          placeholder="welcome"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-      </div>
-    </form>
+    <div className="search-page">
+      <h2>Search</h2>
+      <form onSubmit={(event) => onSearch(event)}>
+        <div className="search">
+          <button>
+            <img src={search} alt="search" />
+          </button>
+          <input
+            type="text"
+            placeholder="welcome"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </div>
+      </form>
+    </div>
   );
 }
