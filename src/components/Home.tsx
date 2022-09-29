@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAlbums, getArtist, sortGenre } from "../scripts/methods";
 import AlbumCollection from "./AlbumCollection";
 import ArtistCollection from "./ArtistCollection";
+import Footer from "./Footer";
 import GenreCollection from "./GenreCollection";
 import SideBar from "./SideBar";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <AlbumCollection data={albums}>Albums</AlbumCollection>
         <GenreCollection data={genres}>Genres</GenreCollection>
       </div>
+      <Footer />
     </>
   );
 }
