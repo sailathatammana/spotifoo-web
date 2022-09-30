@@ -12,7 +12,7 @@ export default function Searchpage() {
     setQuery("");
     return result;
   }
-  const searchResults = <SearchResults data={result} />;
+  const searchResults = <SearchResults result={result} />;
 
   return (
     <div className="search-page">

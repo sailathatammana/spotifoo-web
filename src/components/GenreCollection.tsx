@@ -8,7 +8,9 @@ interface IProps {
 }
 
 const GenreCollection: FC<IProps> = ({ data, children }) => {
-  const Thumbnails = data.map((item) => <GenreCard item={item} />);
+  const Thumbnails = data.map((item, index) => (
+    <GenreCard key={index} item={item} />
+  ));
   return (
     <>
       <section className="home-thumbs">
