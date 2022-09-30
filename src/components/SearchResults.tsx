@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { sortList } from "../scripts/methods";
+import Api from "../api/Api";
 
 interface IProps {
   result: string;
@@ -7,18 +8,15 @@ interface IProps {
 
 const SearchResults: FC<IProps> = ({ result }) => {
   const [data, setData] = useState([]);
-  const list = sortList(data);
   useEffect(() => {
-    fetch("http://localhost:8080/music?search=" + result)
-      .then((response) => response.json())
-      // .catch((error) => console.log(error))
-      .then(setData);
-  }, [result, setData]);
-  console.log(list);
+    Api.get("/music?search=" + result).then((response) => {
+      setData(response.data);
+    });
+  }, []);
+  console.log(data);
   return (
     <>
       <h2>{result}</h2>
-      {list}
     </>
   );
 };
