@@ -1,18 +1,20 @@
 import { FC, useEffect, useState } from "react";
 import { sortList } from "../scripts/methods";
-import Api from "../api/Api";
+import { IMusic } from "../types/iMusic";
 
 interface IProps {
   result: string;
 }
 
 const SearchResults: FC<IProps> = ({ result }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<IMusic[]>([]);
+
   useEffect(() => {
-    Api.get("/music?search=" + result).then((response) => {
-      setData(response.data);
-    });
-  }, []);
+    fetch("http://localhost:8080/music/?search=" + result)
+      .then((response) => response.json())
+      .then(setData);
+  }, [result, setData]);
+
   console.log(data);
   return (
     <>
