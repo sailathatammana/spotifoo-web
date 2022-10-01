@@ -15,14 +15,16 @@ const ResultCard: FC<iProps> = ({ item }) => {
   };
 
   return (
-    <article className="thumbs">
+    <article className="result-thumbs">
       <img
         src={"http://localhost:8080/" + item.pathToAlbum}
         onError={imageOnErrorHandler}
         alt=""
       />
-
-      <h3>{item.title}</h3>
+      <div className="item-content">
+        <p className="title">{item.title}</p>
+        <p className="artist">{item.artist}</p>
+      </div>
     </article>
   );
 };

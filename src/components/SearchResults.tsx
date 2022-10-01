@@ -23,14 +23,14 @@ const SearchResults: FC<IProps> = ({ result }) => {
   }
 
   return (
-    <>
+    <div className="search-results">
       <h2>Results</h2>
       {filterResults?.length === 0 && result !== "" ? (
-        <h2>No songs found</h2>
+        <p>No songs found</p>
       ) : (
         <ul>{filterResults}</ul>
       )}
-    </>
+    </div>
   );
 };
 export default SearchResults;

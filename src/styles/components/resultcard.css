@@ -1,0 +1,82 @@
+.search-results {
+  margin-bottom: 150px;
+}
+
+.search-results h2 {
+  position: absolute;
+  height: 29px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--space-big);
+  line-height: 29px;
+  color: var(--color-white);
+}
+
+.search-results p {
+  position: relative;
+  top: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.result-thumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: var(--space-small);
+  position: relative;
+  width: 141px;
+  height: 64px;
+  top: 40px;
+  margin-bottom: var(--space-medium);
+}
+
+.result-thumbs img {
+  width: 64px;
+  height: 64px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.result-thumbs .item-content {
+  width: 68px;
+  height: 37px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.item-content .title {
+  position: absolute;
+  width: 200px;
+  left: 72px;
+  top: 21.09%;
+  bottom: 52.34%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.item-content .artist {
+  position: absolute;
+  width: 139px;
+  left: 72px;
+  top: 60.16%;
+  bottom: 21.09%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-gray-light);
+}
