@@ -32,3 +32,10 @@ export function sortGenre(data: []) {
   data.sort();
   return data;
 }
+
+export function sortList(data: IMusic[]) {
+  data.sort((a, b) => {
+    return a.title.localeCompare(b.title);
+  });
+  return data;
+}
