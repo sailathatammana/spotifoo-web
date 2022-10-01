@@ -9,7 +9,6 @@ export default function Searchpage() {
   function onSearch(event: FormEvent<HTMLFormElement>): string {
     setResult(query);
     event.preventDefault();
-    setQuery("");
     return result;
   }
   const searchResults = <SearchResults result={result} />;
