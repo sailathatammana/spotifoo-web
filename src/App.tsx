@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import Searchpage from "./components/SearchPage";
+import FilterResults from "./components/FilterResults";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Searchpage} />
+          <Route exact path="/:filtertype/:id" component={FilterResults} />
         </Switch>
         <Footer />
       </Router>

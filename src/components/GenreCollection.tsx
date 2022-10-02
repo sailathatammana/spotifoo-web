@@ -1,15 +1,18 @@
 import { FC } from "react";
+import { filterTypes } from "../scripts/filterTypes";
 
+import { IMusic } from "../types/iMusic";
 import GenreCard from "./GenreCard";
 
 interface IProps {
-  data: [];
+  data: IMusic[];
   children: string;
+  filterType: filterTypes;
 }
 
-const GenreCollection: FC<IProps> = ({ data, children }) => {
+const GenreCollection: FC<IProps> = ({ data, filterType, children }) => {
   const Thumbnails = data.map((item, index) => (
-    <GenreCard key={index} item={item} />
+    <GenreCard key={index} item={item} filterType={filterType} />
   ));
   return (
     <>

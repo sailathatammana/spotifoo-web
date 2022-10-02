@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { filterTypes } from "../scripts/filterTypes";
 
 import { IMusic } from "../types/iMusic";
 import AlbumCard from "./AlbumCard";
@@ -6,11 +7,12 @@ import AlbumCard from "./AlbumCard";
 interface IProps {
   data: IMusic[];
   children: string;
+  filterType: filterTypes;
 }
 
-const AlbumCollection: FC<IProps> = ({ data, children }) => {
+const AlbumCollection: FC<IProps> = ({ data, filterType, children }) => {
   const Thumbnails = data.map((item) => (
-    <AlbumCard key={item.id} item={item} />
+    <AlbumCard key={item.id} item={item} filterType={filterType} />
   ));
   return (
     <>

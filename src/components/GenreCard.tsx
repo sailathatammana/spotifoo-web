@@ -1,15 +1,21 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
+import { IMusic } from "../types/iMusic";
 import noAlbum from "../assets/picture-no-album.png";
+import { filterTypes } from "../scripts/filterTypes";
 
 interface iProps {
-  item: [];
+  item: IMusic;
+  filterType: filterTypes;
 }
 
-const GenreCard: FC<iProps> = ({ item }) => {
+const GenreCard: FC<iProps> = ({ item, filterType }) => {
   return (
     <article className="thumbs">
-      <img src={noAlbum} alt="" />
-      <h3>{item}</h3>
+      <Link to={`./${filterTypes[filterType]}/${item.genre}`}>
+        <img src={noAlbum} alt="" />
+        <h3>{item.genre}</h3>
+      </Link>
     </article>
   );
 };

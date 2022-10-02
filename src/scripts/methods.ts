@@ -28,9 +28,18 @@ export function getAlbums(data: IMusic[]) {
   return unique;
 }
 
-export function sortGenre(data: []) {
-  data.sort();
-  return data;
+export function getGenre(data: IMusic[]) {
+  const unique: IMusic[] = [];
+
+  data.map((item: IMusic) =>
+    unique.filter((a) => a.genre === item.genre).length > 0
+      ? null
+      : unique.push(item)
+  );
+  unique.sort((a, b) => {
+    return a.album.localeCompare(b.album);
+  });
+  return unique;
 }
 
 export function sortList(data: IMusic[]) {

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { getAlbums, getArtist, sortGenre } from "../scripts/methods";
+import { filterTypes } from "../scripts/filterTypes";
+import { getAlbums, getArtist, getGenre } from "../scripts/methods";
 import AlbumCollection from "./AlbumCollection";
 import ArtistCollection from "./ArtistCollection";
 import GenreCollection from "./GenreCollection";
 
 export default function Home() {
   const [music, setMusic] = useState([]);
-  const [genre, setGenre] = useState<[]>([]);
   const artists = getArtist(music);
   const albums = getAlbums(music);
-  const genres = sortGenre(genre);
+  const genres = getGenre(music);
 
   useEffect(() => {
     fetch("http://localhost:8080/music/")
@@ -17,17 +17,17 @@ export default function Home() {
       .then(setMusic);
   }, [setMusic]);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/genre/")
-      .then((response) => response.json())
-      .then(setGenre);
-  }, [setGenre]);
-
   return (
     <div className="collections">
-      <ArtistCollection data={artists}>Artists</ArtistCollection>
-      <AlbumCollection data={albums}>Albums</AlbumCollection>
-      <GenreCollection data={genres}>Genres</GenreCollection>
+      <ArtistCollection data={artists} filterType={filterTypes.artist}>
+        Artists
+      </ArtistCollection>
+      <AlbumCollection data={albums} filterType={filterTypes.album}>
+        Albums
+      </AlbumCollection>
+      <GenreCollection data={genres} filterType={filterTypes.genre}>
+        Genres
+      </GenreCollection>
     </div>
   );
 }
