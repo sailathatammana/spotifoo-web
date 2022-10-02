@@ -4,6 +4,7 @@ import { FC } from "react";
 import noAlbum from "../assets/picture-no-album.png";
 
 import { IMusic } from "../types/iMusic";
+import FilterCard from "./FilterCard";
 
 const FilterResults: FC = () => {
   const { filter }: any = useParams();
@@ -17,6 +18,10 @@ const FilterResults: FC = () => {
   }, [filter, search, setData]);
   console.log(data);
 
+  const filterResults = data.map((item, index) => (
+    <FilterCard key={index} item={item} />
+  ));
+
   return (
     <div className="filter-results">
       <div className="header">
@@ -26,6 +31,7 @@ const FilterResults: FC = () => {
           <h1>{search}</h1>
         </div>
       </div>
+      <ul>{filterResults}</ul>
     </div>
   );
 };
