@@ -1,0 +1,78 @@
+.filter-results {
+  margin-left: 200px;
+}
+
+.filter-results .header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 32px;
+  gap: 32px;
+  isolation: isolate;
+
+  position: relative;
+  height: 204px;
+
+  /* Grey Dark */
+
+  background: #242424;
+}
+
+.filter-results .header img {
+  width: 140px;
+  height: 140px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.filter-results .content {
+  margin-right: 32px;
+  width: 141px;
+  height: 72px;
+  left: 304px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.content span {
+  position: absolute;
+
+  top: 60.79%;
+  bottom: 19.61%;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 8px;
+  text-transform: uppercase;
+
+  /* White */
+
+  color: #ffffff;
+}
+
+.content h1 {
+  position: absolute;
+
+  top: 65.39%;
+  bottom: 8.53%;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+
+  /* identical to box height */
+
+  /* White */
+
+  color: #ffffff;
+}

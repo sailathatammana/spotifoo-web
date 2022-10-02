@@ -9,5 +9,5 @@
 
 .footer h2 {
   color: var(--color-white);
-  align-items: center;
+  text-align: center;
 }
