@@ -11,6 +11,10 @@
   border-radius: var(--space-small);
 }
 
+.thumbs .link {
+  text-decoration: none;
+}
+
 .thumbs img {
   width: 192px;
   height: 192px;

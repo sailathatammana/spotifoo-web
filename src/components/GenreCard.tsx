@@ -12,7 +12,7 @@ interface iProps {
 const GenreCard: FC<iProps> = ({ item, filterType }) => {
   return (
     <article className="thumbs">
-      <Link to={`./${filterTypes[filterType]}/${item.genre}`}>
+      <Link to={`./${filterTypes[filterType]}/${item.genre}`} className="link">
         <img src={noAlbum} alt="" />
         <h3>{item.genre}</h3>
       </Link>

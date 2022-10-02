@@ -19,7 +19,7 @@ const AlbumCard: FC<iProps> = ({ item, filterType }) => {
 
   return (
     <article className="thumbs">
-      <Link to={`./${filterTypes[filterType]}/${item.album}`}>
+      <Link to={`./${filterTypes[filterType]}/${item.album}`} className="link">
         <img
           src={"http://localhost:8080/" + item.pathToAlbum}
           onError={imageOnErrorHandler}
