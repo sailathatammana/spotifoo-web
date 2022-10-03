@@ -10,6 +10,7 @@ const FilterResults: FC = () => {
   const { filter }: any = useParams();
   const { search }: any = useParams();
   const [data, setData] = useState<IMusic[]>([]);
+  let clipArt: any = "";
 
   useEffect(() => {
     fetch("http://localhost:8080/music/?filter=" + filter + "&search=" + search)
@@ -21,10 +22,29 @@ const FilterResults: FC = () => {
     <FilterCard key={index} item={item} index={index} />
   ));
 
+  const imageOnErrorHandler = (
+    event: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
+    event.currentTarget.src = noAlbum;
+    event.currentTarget.className = "error";
+  };
+
+  if (data.length !== 0) {
+    clipArt = filterResults[0].props.item.pathToAlbum;
+  }
+
   return (
     <div className="filter-results">
       <div className="header">
-        <img src={noAlbum} alt="" height={200} width={200} />
+        {data.length !== 0 && filter !== "genre" ? (
+          <img
+            src={"http://localhost:8080/" + clipArt}
+            onError={imageOnErrorHandler}
+            alt=""
+          />
+        ) : (
+          <img src={noAlbum} alt="" />
+        )}
         <div className="content">
           <span>{filter}</span>
           <h1>{search}</h1>
