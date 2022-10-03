@@ -1,4 +1,5 @@
 .filter-results {
+  margin-bottom: 120px;
   margin-left: 200px;
 }
 
@@ -55,4 +56,42 @@
   font-size: var(--space-bigger);
   line-height: 40px;
   color: var(--color-white);
+}
+
+.table-format {
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--space-bigger);
+  align-items: center;
+  padding: 3px 0px;
+  gap: var(--space-medium);
+  width: 1016px;
+  margin-left: var(--space-bigger);
+  top: 208px;
+}
+
+.table-id .id {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-gray-light);
+}
+
+.table-title .title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--color-gray-light);
+}
+
+hr {
+  width: 1016px;
+  height: 1%;
+  left: 232px;
+  top: 377px;
 }

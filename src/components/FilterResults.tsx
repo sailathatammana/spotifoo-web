@@ -16,10 +16,9 @@ const FilterResults: FC = () => {
       .then((response) => response.json())
       .then(setData);
   }, [filter, search, setData]);
-  console.log(data);
 
   const filterResults = data.map((item, index) => (
-    <FilterCard key={index} item={item} />
+    <FilterCard key={index} item={item} index={index} />
   ));
 
   return (
@@ -31,6 +30,15 @@ const FilterResults: FC = () => {
           <h1>{search}</h1>
         </div>
       </div>
+      <div className="table-format">
+        <div className="table-id">
+          <p className="id">#</p>
+        </div>
+        <div className="table-title">
+          <p className="title">Tittle</p>
+        </div>
+      </div>
+      <hr />
       <ul>{filterResults}</ul>
     </div>
   );
