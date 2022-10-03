@@ -7,8 +7,6 @@ interface iProps {
 }
 
 const FilterCard: FC<iProps> = ({ item, index }) => {
-  console.log(index + 1);
-
   return (
     <article className="filter-thumbs">
       <div className="filter-id">
@@ -17,6 +15,14 @@ const FilterCard: FC<iProps> = ({ item, index }) => {
       <div className="filter-content">
         <p className="title">{item.title}</p>
         <p className="artist">{item.artist}</p>
+      </div>
+      <div className="music">
+        <audio controls className="songplay">
+          <source
+            src={"http://localhost:8080/" + item.pathToMusic}
+            type="audio/mpeg"
+          />
+        </audio>
       </div>
     </article>
   );

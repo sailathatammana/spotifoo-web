@@ -75,3 +75,16 @@
   text-transform: uppercase;
   color: var(--color-gray-light);
 }
+
+.filter-thumbs .music {
+  width: 500px;
+  height: 29px;
+  flex: none;
+  order: 2;
+  flex-grow: 2;
+}
+
+.music .songplay {
+  height: 29px;
+  border-radius: 10px;
+}

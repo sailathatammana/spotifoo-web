@@ -25,6 +25,15 @@ const ResultCard: FC<iProps> = ({ item }) => {
         <p className="title">{item.title}</p>
         <p className="artist">{item.artist}</p>
       </div>
+      <div className="music">
+        <audio controls className="songplay">
+          <source
+            src={"http://localhost:8080/" + item.pathToMusic}
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </article>
   );
 };

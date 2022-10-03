@@ -44,7 +44,7 @@
 }
 
 .result-thumbs .item-content {
-  width: 68px;
+  width: 500px;
   height: 37px;
   flex: none;
   order: 1;
@@ -76,4 +76,16 @@
   line-height: 12px;
   text-transform: uppercase;
   color: var(--color-gray-light);
+}
+.result-thumbs .music {
+  width: 500px;
+  height: 29px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.result-thumbs .music .songplay {
+  height: 35px;
+  border-radius: 10px;
 }
