@@ -16,16 +16,13 @@ const SearchResults: FC<IProps> = ({ result }) => {
       .then(setData);
   }, [result, setData]);
 
-  if (result !== "") {
-    filterResults = data.map((item, index) => (
-      <ResultCard key={index} item={item} />
-    ));
-  }
+  filterResults = data.map((item, index) => (
+    <ResultCard key={index} item={item} />
+  ));
 
   return (
     <div className="search-results">
-      <h2>Results</h2>
-      {filterResults?.length === 0 && result !== "" ? (
+      {filterResults?.length === 0 ? (
         <p>No songs found</p>
       ) : (
         <ul>{filterResults}</ul>

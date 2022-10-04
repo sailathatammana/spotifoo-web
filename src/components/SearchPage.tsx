@@ -5,13 +5,17 @@ import SearchResults from "./SearchResults";
 export default function Searchpage() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<string>("");
+  let searchResults;
 
   function onSearch(event: FormEvent<HTMLFormElement>): string {
     setResult(query);
     event.preventDefault();
     return result;
   }
-  const searchResults = <SearchResults result={result} />;
+
+  if (result !== "") {
+    searchResults = <SearchResults result={result} />;
+  }
 
   return (
     <div className="search-page">
@@ -29,6 +33,7 @@ export default function Searchpage() {
           />
         </div>
       </form>
+      <h2>Results</h2>
       {searchResults}
     </div>
   );
