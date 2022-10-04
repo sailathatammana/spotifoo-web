@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { filterTypes } from "../scripts/filterTypes";
 import { getAlbums, getArtist, getGenre } from "../scripts/methods";
-import AlbumCollection from "./AlbumCollection";
-import ArtistCollection from "./ArtistCollection";
-import GenreCollection from "./GenreCollection";
+import AlbumCollection from "../components/AlbumCollection";
+import ArtistCollection from "../components/ArtistCollection";
+import GenreCollection from "../components/GenreCollection";
 
 export default function Home() {
   const [music, setMusic] = useState([]);

@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import search from "../assets/icons/search.svg";
-import SearchResults from "./SearchResults";
+import SearchResults from "../components/SearchResults";
 
 export default function Searchpage() {
   const [query, setQuery] = useState("");

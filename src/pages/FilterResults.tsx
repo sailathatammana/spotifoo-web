@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { FC } from "react";
 import noAlbum from "../assets/picture-no-album.png";
 
 import { IMusic } from "../types/iMusic";
-import FilterCard from "./FilterCard";
+import FilterCard from "../components/FilterCard";
 
-const FilterResults: FC = () => {
+export default function FilterResults() {
   const { filter }: any = useParams();
   const { search }: any = useParams();
   const [data, setData] = useState<IMusic[]>([]);
@@ -62,5 +61,4 @@ const FilterResults: FC = () => {
       <ul>{filterResults}</ul>
     </div>
   );
-};
-export default FilterResults;
+}
