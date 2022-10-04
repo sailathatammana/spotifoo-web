@@ -13,8 +13,9 @@
   height: var(--space-big);
   top: 6.25%;
   margin: 0 0 0 1.5rem;
-  background: var(--color-white);
+  filter: brightness(0) invert(1);
 }
+
 .navbar {
   position: fixed;
   left: 0%;
