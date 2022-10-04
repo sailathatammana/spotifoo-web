@@ -1,4 +1,5 @@
 import { IMusic } from "../types/iMusic";
+import noAlbum from "../assets/picture-no-album.png";
 
 export function getArtist(data: IMusic[]) {
   const unique: IMusic[] = [];
@@ -48,3 +49,10 @@ export function sortList(data: IMusic[]) {
   });
   return data;
 }
+
+export const imageOnErrorHandler = (
+  event: React.SyntheticEvent<HTMLImageElement, Event>
+) => {
+  event.currentTarget.src = noAlbum;
+  event.currentTarget.className = "error";
+};

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import noAlbum from "../assets/picture-no-album.png";
-
 import { IMusic } from "../types/iMusic";
 import FilterCard from "../components/FilterCard";
+import { imageOnErrorHandler } from "../scripts/methods";
 
 export default function FilterResults() {
   const { filter }: any = useParams();
@@ -20,13 +20,6 @@ export default function FilterResults() {
   const filterResults = data.map((item, index) => (
     <FilterCard key={index} item={item} index={index} />
   ));
-
-  const imageOnErrorHandler = (
-    event: React.SyntheticEvent<HTMLImageElement, Event>
-  ) => {
-    event.currentTarget.src = noAlbum;
-    event.currentTarget.className = "error";
-  };
 
   if (data.length !== 0) {
     clipArt = filterResults[0].props.item.pathToAlbum;
