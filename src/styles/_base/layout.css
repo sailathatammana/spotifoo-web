@@ -6,3 +6,9 @@ body {
   padding: 0;
   background: var(--color-gray-darkest);
 }
+
+.load {
+  color: var(--color-white);
+  margin-left: 232px;
+  margin-top: var(--space-bigger);
+}

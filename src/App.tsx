@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./styles/style.css";
 import Home from "./pages/Home";
@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <Router>
         <SideBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/search" component={Searchpage} />
-          <Route exact path="/:filter/:search" component={FilterResults} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Searchpage />} />
+          <Route path="/:filter/:search" element={<FilterResults />} />
+        </Routes>
         <Footer />
       </Router>
     </div>

@@ -7,6 +7,8 @@ import GenreCollection from "../components/GenreCollection";
 
 export default function Home() {
   const [music, setMusic] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const artists = getArtist(music);
   const albums = getAlbums(music);
   const genres = getGenre(music);
@@ -14,20 +16,29 @@ export default function Home() {
   useEffect(() => {
     fetch("http://localhost:8080/music/")
       .then((response) => response.json())
-      .then(setMusic);
-  }, [setMusic]);
+      .then((music) => setMusic(music))
+      .then(() => setLoading(false))
+      .catch(setError);
+  }, []);
+
+  if (loading) return <h1 className="load">Loading...</h1>;
+  if (error) return <pre>{JSON.stringify(error)}</pre>;
 
   return (
     <div className="collections">
-      <ArtistCollection data={artists} filterType={filterTypes.artist}>
-        Artists
-      </ArtistCollection>
-      <AlbumCollection data={albums} filterType={filterTypes.album}>
-        Albums
-      </AlbumCollection>
-      <GenreCollection data={genres} filterType={filterTypes.genre}>
-        Genres
-      </GenreCollection>
+      {music && (
+        <>
+          <ArtistCollection data={artists} filterType={filterTypes.artist}>
+            Artists
+          </ArtistCollection>
+          <AlbumCollection data={albums} filterType={filterTypes.album}>
+            Albums
+          </AlbumCollection>
+          <GenreCollection data={genres} filterType={filterTypes.genre}>
+            Genres
+          </GenreCollection>
+        </>
+      )}
     </div>
   );
 }
