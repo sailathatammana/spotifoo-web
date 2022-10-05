@@ -9,12 +9,16 @@ export default function FilterResults() {
   const { filter }: any = useParams();
   const { search }: any = useParams();
   const [data, setData] = useState<IMusic[]>([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   let clipArt: any = "";
 
   useEffect(() => {
-    fetch("http://localhost:8080/music/?filter=" + filter + "&search=" + search)
+    fetch(`http://localhost:8080/music/?filter=${filter}&search=${search}`)
       .then((response) => response.json())
-      .then(setData);
+      .then((data) => setData(data))
+      .then(() => setLoading(false))
+      .catch(setError);
   }, [filter, search, setData]);
 
   const filterResults = data.map((item, index) => (
@@ -25,33 +29,40 @@ export default function FilterResults() {
     clipArt = filterResults[0].props.item.pathToAlbum;
   }
 
+  if (loading) return <h1 className="load">Loading...</h1>;
+  if (error) return <pre>{JSON.stringify(error)}</pre>;
+
   return (
     <div className="filter-results">
-      <div className="header">
-        {data.length !== 0 && filter !== "genre" ? (
-          <img
-            src={"http://localhost:8080/" + clipArt}
-            onError={imageOnErrorHandler}
-            alt=""
-          />
-        ) : (
-          <img src={noAlbum} alt="" />
-        )}
-        <div className="content">
-          <span>{filter}</span>
-          <h1>{search}</h1>
-        </div>
-      </div>
-      <div className="table-format">
-        <div className="table-id">
-          <p className="id">#</p>
-        </div>
-        <div className="table-title">
-          <p className="title">Tittle</p>
-        </div>
-      </div>
-      <hr />
-      <ul>{filterResults}</ul>
+      {data && (
+        <>
+          <div className="header">
+            {data.length !== 0 && filter !== "genre" ? (
+              <img
+                src={"http://localhost:8080/" + clipArt}
+                onError={imageOnErrorHandler}
+                alt=""
+              />
+            ) : (
+              <img src={noAlbum} alt="" />
+            )}
+            <div className="content">
+              <span>{filter}</span>
+              <h1>{search}</h1>
+            </div>
+          </div>
+          <div className="table-format">
+            <div className="table-id">
+              <p className="id">#</p>
+            </div>
+            <div className="table-title">
+              <p className="title">Tittle</p>
+            </div>
+          </div>
+          <hr />
+          <ul>{filterResults}</ul>
+        </>
+      )}
     </div>
   );
 }

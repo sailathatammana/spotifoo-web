@@ -2,7 +2,8 @@
   margin-bottom: 150px;
 }
 
-.search-results p {
+.search-results p,
+.search-load {
   position: relative;
   font-style: normal;
   font-weight: 400;
