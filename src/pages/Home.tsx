@@ -4,6 +4,7 @@ import { getAlbums, getArtist, getGenre } from "../scripts/methods";
 import AlbumCollection from "../components/AlbumCollection";
 import ArtistCollection from "../components/ArtistCollection";
 import GenreCollection from "../components/GenreCollection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [music, setMusic] = useState([]);
@@ -39,6 +40,7 @@ export default function Home() {
           </GenreCollection>
         </>
       )}
+      <Footer result={""} />
     </div>
   );
 }

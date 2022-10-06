@@ -1,6 +1,8 @@
 import { FC } from "react";
+import { useState } from "react";
+
 import { IMusic } from "../types/iMusic";
-import AudioPlayer from "./AudioPlayer";
+import Footer from "./Footer";
 
 interface iProps {
   item: IMusic;
@@ -8,18 +10,25 @@ interface iProps {
 }
 
 const FilterCard: FC<iProps> = ({ item, index }) => {
+  let [state, setState] = useState("");
+  console.log("state value " + state);
+  const onPress = () => {
+    console.log("Hi in onPress()");
+    setState(item.pathToMusic);
+  };
+
   return (
     <article className="filter-thumbs">
       <div className="filter-id">
         <p className="id">{index + 1}</p>
       </div>
-      <div className="filter-content">
-        <p className="title">{item.title}</p>
-        <p className="artist">{item.artist}</p>
-      </div>
-      <div className="music">
-        <AudioPlayer path={item.pathToMusic} />
-      </div>
+      <Footer result={state} />
+      <button onClick={onPress}>
+        <div className="filter-content">
+          <p className="title">{item.title}</p>
+          <p className="artist">{item.artist}</p>
+        </div>
+      </button>
     </article>
   );
 };

@@ -1,13 +1,20 @@
 import { FC } from "react";
+import { useState } from "react";
 import { IMusic } from "../types/iMusic";
 import { imageOnErrorHandler } from "../scripts/methods";
-import AudioPlayer from "./AudioPlayer";
+import Footer from "./Footer";
 
 interface iProps {
   item: IMusic;
 }
 
 const ResultCard: FC<iProps> = ({ item }) => {
+  let [state, setState] = useState("");
+  console.log("state value " + state);
+  const onPress = () => {
+    console.log("Hi in onPress()");
+    setState(item.pathToMusic);
+  };
   return (
     <article className="result-thumbs">
       <img
@@ -15,13 +22,13 @@ const ResultCard: FC<iProps> = ({ item }) => {
         onError={imageOnErrorHandler}
         alt=""
       />
-      <div className="item-content">
-        <p className="title">{item.title}</p>
-        <p className="artist">{item.artist}</p>
-      </div>
-      <div className="music">
-        <AudioPlayer path={item.pathToMusic} />
-      </div>
+      <Footer result={state} />
+      <button onClick={onPress}>
+        <div className="item-content">
+          <p className="title">{item.title}</p>
+          <p className="artist">{item.artist}</p>
+        </div>
+      </button>
     </article>
   );
 };

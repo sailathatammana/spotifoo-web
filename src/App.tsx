@@ -17,7 +17,6 @@ function App() {
           <Route path="/search" element={<Searchpage />} />
           <Route path="/:filter/:search" element={<FilterResults />} />
         </Routes>
-        <Footer />
       </Router>
     </div>
   );
