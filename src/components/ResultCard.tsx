@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { IMusic } from "../types/iMusic";
 import { imageOnErrorHandler } from "../scripts/methods";
+import AudioPlayer from "./AudioPlayer";
 
 interface iProps {
   item: IMusic;
@@ -19,13 +20,7 @@ const ResultCard: FC<iProps> = ({ item }) => {
         <p className="artist">{item.artist}</p>
       </div>
       <div className="music">
-        <audio controls className="songplay">
-          <source
-            src={"http://localhost:8080/" + item.pathToMusic}
-            type="audio/mpeg"
-          />
-          Your browser does not support the audio element.
-        </audio>
+        <AudioPlayer path={item.pathToMusic} />
       </div>
     </article>
   );
