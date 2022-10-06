@@ -11,7 +11,7 @@ const ResultCard: FC<iProps> = ({ item }) => {
   return (
     <article className="result-thumbs">
       <img
-        src={"http://localhost:8080/" + item.pathToAlbum}
+        src={"http://localhost:8080" + item.pathToAlbum}
         onError={imageOnErrorHandler}
         alt=""
       />

@@ -39,7 +39,7 @@ export default function FilterResults() {
           <div className="header">
             {data.length !== 0 && filter !== "genre" ? (
               <img
-                src={"http://localhost:8080/" + clipArt}
+                src={"http://localhost:8080" + clipArt}
                 onError={imageOnErrorHandler}
                 alt=""
               />
