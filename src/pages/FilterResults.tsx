@@ -29,7 +29,7 @@ export default function FilterResults() {
     clipArt = filterResults[0].props.item.pathToAlbum;
   }
 
-  if (loading) return <h1 className="load">Loading...</h1>;
+  if (loading) return <p className="load">Loading...</p>;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
 
   return (

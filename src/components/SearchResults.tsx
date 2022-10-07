@@ -24,7 +24,7 @@ const SearchResults: FC<IProps> = ({ result }) => {
     <ResultCard key={index} item={item} />
   ));
 
-  if (loading) return <h1 className="search-load">Loading...</h1>;
+  if (loading) return <p className="search-load">Loading...</p>;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
 
   return (
