@@ -14,7 +14,7 @@ const FilterCard: FC<iProps> = ({ item, index }) => {
   console.log("state value " + state);
   const onPress = () => {
     console.log("Hi in onPress()");
-    setState(item.pathToMusic);
+    setState(item.title);
   };
 
   return (

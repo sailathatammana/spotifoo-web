@@ -12,6 +12,15 @@
   margin-bottom: var(--space-small);
 }
 
+.filter-thumbs .footer {
+  right: 0px;
+}
+
+.filter-thumbs button {
+  border-style: none;
+  background-color: var(--color-gray-darkest);
+}
+
 .filter-thumbs .filter-id {
   width: var(--space-big);
   height: var(--space-big);
@@ -49,8 +58,7 @@
 }
 
 .filter-content .title {
-  position: absolute;
-  left: 19.88%;
+  margin-left: 5%;
   right: 0%;
   top: 8.57%;
   bottom: 42.86%;
@@ -59,12 +67,12 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  text-align: left;
   color: var(--color-white);
 }
 
 .filter-content .artist {
-  position: absolute;
-  left: 19.88%;
+  margin-left: 5%;
   right: 3.53%;
   top: 57.14%;
   bottom: 8.57%;
@@ -73,6 +81,7 @@
   font-size: 10px;
   line-height: 12px;
   text-transform: uppercase;
+  text-align: left;
   color: var(--color-gray-light);
 }
 

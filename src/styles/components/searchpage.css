@@ -2,6 +2,14 @@
   margin-top: var(--space-bigger);
   margin-left: 232px;
 }
+.search-page .footer {
+  right: 0px;
+}
+
+.search-page button {
+  border-style: none;
+  background-color: var(--color-gray-darkest);
+}
 
 .search-page h2 {
   width: 72px;

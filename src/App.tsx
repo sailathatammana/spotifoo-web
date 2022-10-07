@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/style.css";
 import Home from "./pages/Home";
 import SideBar from "./components/SideBar";
-import Footer from "./components/Footer";
 import Searchpage from "./pages/SearchPage";
 import FilterResults from "./pages/FilterResults";
 
