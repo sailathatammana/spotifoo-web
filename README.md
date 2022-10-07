@@ -43,7 +43,15 @@ A spreadsheet with the information related to the organization of the project.
 
 ---
 
-### 4.2 Component tree
+### 4.2 Usecase Diagram
+
+A low detail diagram to visualize how the application will work.
+
+[Google Spreadsheets link](https://bit.ly/3rBD11t)
+
+---
+
+### 4.3 Component tree
 
 The component tree allows to visualize the overall hierarchy of the project.
 
