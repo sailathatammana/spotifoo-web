@@ -47,7 +47,7 @@ A spreadsheet with the information related to the organization of the project.
 
 A low detail diagram to visualize how the application will work.
 
-[Google Spreadsheets link](https://bit.ly/3rBD11t)
+[Usecase Diagram](https://bit.ly/3rBD11t)
 
 ---
 
